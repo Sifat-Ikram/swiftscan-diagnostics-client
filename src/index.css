@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.all-btn{
+    border-color: #0845F4;
+    color: #0845F4;
+    font-weight: bold;
+}
+
+.all-btn:hover{
+    color: white;
+    background-color: #0845F4;
+    font-weight: bold;
+    cursor: pointer;
+    border-color: #0845F4;
+}

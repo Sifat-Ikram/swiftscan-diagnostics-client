@@ -1,0 +1,146 @@
+[
+    {
+        "_id": 1,
+        "title": "Complete Blood Count (CBC)",
+        "image": "cbc_image.jpg",
+        "date": "2024-01-01",
+        "slots": [
+          {"time": "09:00 AM", "availability": "Available"},
+          {"time": "11:00 AM", "availability": "Available"},
+          {"time": "02:00 PM", "availability": "Available"}
+        ],
+        "details": ""
+    },
+    {
+        "_id": 2,
+        "title": "Complete Blood Count (CBC)",
+        "image": "cbc_image.jpg",
+        "date": "2024-01-01",
+        "slots": [
+          {"time": "09:00 AM", "availability": "Available"},
+          {"time": "11:00 AM", "availability": "Available"},
+          {"time": "02:00 PM", "availability": "Available"}
+        ],
+        "details": ""
+    },
+    {
+        "_id": 3,
+        "title": "Complete Blood Count (CBC)",
+        "image": "cbc_image.jpg",
+        "date": "2024-01-01",
+        "slots": [
+          {"time": "09:00 AM", "availability": "Available"},
+          {"time": "11:00 AM", "availability": "Available"},
+          {"time": "02:00 PM", "availability": "Available"}
+        ],
+        "details": ""
+    },
+    {
+        "_id": 4,
+        "title": "Complete Blood Count (CBC)",
+        "image": "cbc_image.jpg",
+        "date": "2024-01-01",
+        "slots": [
+          {"time": "09:00 AM", "availability": "Available"},
+          {"time": "11:00 AM", "availability": "Available"},
+          {"time": "02:00 PM", "availability": "Available"}
+        ],
+        "details": ""
+    },
+    {
+        "_id": 5,
+        "title": "Complete Blood Count (CBC)",
+        "image": "cbc_image.jpg",
+        "date": "2024-01-01",
+        "slots": [
+          {"time": "09:00 AM", "availability": "Available"},
+          {"time": "11:00 AM", "availability": "Available"},
+          {"time": "02:00 PM", "availability": "Available"}
+        ],
+        "details": ""
+    },
+    {
+        "_id": 6,
+        "title": "Complete Blood Count (CBC)",
+        "image": "cbc_image.jpg",
+        "date": "2024-01-01",
+        "slots": [
+          {"time": "09:00 AM", "availability": "Available"},
+          {"time": "11:00 AM", "availability": "Available"},
+          {"time": "02:00 PM", "availability": "Available"}
+        ],
+        "details": ""
+    },
+    {
+        "_id": 7,
+        "title": "Complete Blood Count (CBC)",
+        "image": "cbc_image.jpg",
+        "date": "2024-01-01",
+        "slots": [
+          {"time": "09:00 AM", "availability": "Available"},
+          {"time": "11:00 AM", "availability": "Available"},
+          {"time": "02:00 PM", "availability": "Available"}
+        ],
+        "details": ""
+    },
+    {
+        "_id": 8,
+        "title": "Complete Blood Count (CBC)",
+        "image": "cbc_image.jpg",
+        "date": "2024-01-01",
+        "slots": [
+          {"time": "09:00 AM", "availability": "Available"},
+          {"time": "11:00 AM", "availability": "Available"},
+          {"time": "02:00 PM", "availability": "Available"}
+        ],
+        "details": ""
+    },
+    {
+        "_id": 9,
+        "title": "Complete Blood Count (CBC)",
+        "image": "cbc_image.jpg",
+        "date": "2024-01-01",
+        "slots": [
+          {"time": "09:00 AM", "availability": "Available"},
+          {"time": "11:00 AM", "availability": "Available"},
+          {"time": "02:00 PM", "availability": "Available"}
+        ],
+        "details": ""
+    },
+    {
+        "_id": 10,
+        "title": "Complete Blood Count (CBC)",
+        "image": "cbc_image.jpg",
+        "date": "2024-01-01",
+        "slots": [
+          {"time": "09:00 AM", "availability": "Available"},
+          {"time": "11:00 AM", "availability": "Available"},
+          {"time": "02:00 PM", "availability": "Available"}
+        ],
+        "details": ""
+    },
+    {
+        "_id": 11,
+        "title": "Complete Blood Count (CBC)",
+        "image": "cbc_image.jpg",
+        "date": "2024-01-01",
+        "slots": [
+          {"time": "09:00 AM", "availability": "Available"},
+          {"time": "11:00 AM", "availability": "Available"},
+          {"time": "02:00 PM", "availability": "Available"}
+        ],
+        "details": ""
+    },
+    {
+        "_id": 12,
+        "title": "Complete Blood Count (CBC)",
+        "image": "cbc_image.jpg",
+        "date": "2024-01-01",
+        "slots": [
+          {"time": "09:00 AM", "availability": "Available"},
+          {"time": "11:00 AM", "availability": "Available"},
+          {"time": "02:00 PM", "availability": "Available"}
+        ],
+        "details": ""
+    }
+]
