@@ -1,13 +1,14 @@
 import { Outlet } from 'react-router-dom'
-import './App.css'
-import Home from './components/pages/home_page/home/Home'
-import ErrorPage from './components/shared/error_page/ErrorPage'
+import Header from './components/shared/header/Header';
+import Footer from './components/shared/footer/Footer';
 
 function App() {
 
   return (
-    <div>
-       <Outlet></Outlet>
+    <div className='font-lato'>
+      <Header></Header>
+      <Outlet></Outlet>
+      <Footer></Footer>
     </div>
   )
 }

@@ -2,145 +2,145 @@
     {
         "_id": 1,
         "title": "Complete Blood Count (CBC)",
-        "image": "cbc_image.jpg",
+        "image": "https://i.ibb.co/NyPpT2s/CBC-Complete-Blood-Count-Test-in-Pregnancy.jpg",
         "date": "2024-01-01",
         "slots": [
           {"time": "09:00 AM", "availability": "Available"},
           {"time": "11:00 AM", "availability": "Available"},
           {"time": "02:00 PM", "availability": "Available"}
         ],
-        "details": ""
+        "details": "A complete blood count (CBC) is a blood test. It's used to look at overall health and find a wide range of conditions, including anemia, infection and leukemia. A complete blood count can show unusual increases or decreases in cell counts. Those changes might point to a medical condition that calls for more testing. If your blood sample is being tested only for a complete blood count, you can eat and drink as usual before the test. If your blood sample also will be used for other tests, you might need to fast for a certain amount of time before the test. Ask your health care provider what you need to do. For a complete blood count, a member of the health care team takes a sample of blood by putting a needle into a vein in your arm, usually at the bend in your elbow. The blood sample is sent to a lab. After the test, you can return to your usual activities right away. The following are expected complete blood count results for adults. The blood is measured in cells per liter (cells/L) or grams per deciliter (grams/dL). A complete blood count, also called a CBC, usually doesn't give all the answers about a diagnosis. Results outside the expected range may or may not need follow-up. A health care provider might need to look at the results of other tests as well as the results of a CBC. In some cases, for results that are way above or below the expected ranges, a health care provider might ask you to see a doctor who treats blood disorders, called a hematologist."
     },
     {
         "_id": 2,
-        "title": "Complete Blood Count (CBC)",
-        "image": "cbc_image.jpg",
+        "title": "Liver Function Tests (LFTs)",
+        "image": "https://i.ibb.co/HnkFRp0/20210916055039-6142db2f696ea-lec-liver-function-test-2nd-yrpage0.png",
         "date": "2024-01-01",
         "slots": [
           {"time": "09:00 AM", "availability": "Available"},
           {"time": "11:00 AM", "availability": "Available"},
           {"time": "02:00 PM", "availability": "Available"}
         ],
-        "details": ""
+        "details": "Liver function tests are blood tests used to help find the cause of your symptoms and monitor liver disease or damage. The tests measure the levels of certain enzymes and proteins in your blood. Some of these tests measure how well the liver is performing its regular functions of producing protein and clearing bilirubin, a blood waste product. Other liver function tests measure enzymes that liver cells release in response to damage or disease. Irregular liver function test results don't always mean liver disease. A member of your health care team will typically explain your results and what they mean. Liver function tests check the levels of certain enzymes and proteins in your blood. Levels that are higher or lower than usual can mean liver problems. The pattern and degree of elevation of these tests along with the overall clinical picture can provide hints to the underlying cause of these problems. ALT is an enzyme found in the liver that helps convert proteins into energy for the liver cells. When the liver is damaged, ALT is released into the bloodstream and levels increase. This test is sometimes referred to as SGPT. AST is an enzyme that helps the body break down amino acids. Like ALT, AST is usually present in blood at low levels. An increase in AST levels may mean liver damage, liver disease or muscle damage. This test is sometimes referred to as SGOT."
     },
     {
         "_id": 3,
-        "title": "Complete Blood Count (CBC)",
-        "image": "cbc_image.jpg",
+        "title": "Thyroid Stimulating Hormone (TSH)",
+        "image": "https://i.ibb.co/ZzJBHgM/shutterstock-2210253977-scaled.jpg",
         "date": "2024-01-01",
         "slots": [
           {"time": "09:00 AM", "availability": "Available"},
           {"time": "11:00 AM", "availability": "Available"},
           {"time": "02:00 PM", "availability": "Available"}
         ],
-        "details": ""
+        "details": "Thyroid-stimulating hormone, also known as TSH, is a glycoprotein hormone produced by the anterior pituitary. It is the primary stimulus for thyroid hormone production by the thyroid gland. It also exerts growth effects on thyroid follicular cells leading to enlargement of the thyroid. The hypothalamic-pituitary axis regulates TSH release. Specifically, neurons in the hypothalamus release TRH, or thyroid-releasing hormone, which stimulates thyrotrophs of the anterior pituitary to secrete TSH. TSH, in turn, stimulates thyroid follicular cells to release thyroid hormones in the form of T3 or T4. Triiodothyronine, or T3, is the active form of thyroid hormone. Though it represents only 20% of the released hormone, the majority of T3 comes from the peripheral conversion of T4 to T3. Tetraiodothyronine, also known as thyroxine or T4, constitutes more than 80% of the secreted hormone. When released into the circulation, it forms T3 through the process of de-iodination. T4 and T3 can then exert negative feedback on the anterior pituitary with high levels of T3/T4 decreasing TSH secretion and low levels of T3/T4 increasing TSH release. In this review, we discuss the physiology, biochemistry, and clinical relevance of TSH."
     },
     {
         "_id": 4,
-        "title": "Complete Blood Count (CBC)",
-        "image": "cbc_image.jpg",
+        "title": "Hemoglobin A1c (HbA1c)",
+        "image": "https://i.ibb.co/PQ4RjQd/dt-230810-hemoglobin-a1c-test-blood-test-800x450.jpg",
         "date": "2024-01-01",
         "slots": [
           {"time": "09:00 AM", "availability": "Available"},
           {"time": "11:00 AM", "availability": "Available"},
           {"time": "02:00 PM", "availability": "Available"}
         ],
-        "details": ""
+        "details": "A hemoglobin A1C (HbA1C) test is a blood test that shows what your average blood sugar (glucose) level was over the past two to three months. Glucose is a type of sugar in your blood that comes from the foods you eat. Your cells use glucose for energy. A hormone called insulin helps glucose get into your cells. If you have diabetes your body doesn't make enough insulin, or your cells don't use it well. As a result, glucose can't get into your cells, so your blood sugar levels increase. Glucose in your blood sticks to hemoglobin, a protein in your red blood cells. As your blood glucose levels increase, more of your hemoglobin will be coated with glucose. An A1C test measures the percentage of your red blood cells that have glucose-coated hemoglobin. An A1C test can show your average glucose level for the past three months becauseGlucose sticks to hemoglobin for as long as the red blood cells are alive and Red blood cells live about three months. High A1C levels are a sign of high blood glucose from diabetes. Diabetes can cause serious health problems, including heart disease, kidney disease, and nerve damage. But with treatment and lifestyle changes, you can control your blood glucose levels.Other names are HbA1C, A1C, glycohemoglobin, glycated hemoglobin, glycosylated hemoglobin"
     },
     {
         "_id": 5,
-        "title": "Complete Blood Count (CBC)",
-        "image": "cbc_image.jpg",
+        "title": "C-Reactive Protein (CRP)",
+        "image": "https://i.ibb.co/n84wSKs/C-Reactive-Protein-Blood-Test.png",
         "date": "2024-01-01",
         "slots": [
           {"time": "09:00 AM", "availability": "Available"},
           {"time": "11:00 AM", "availability": "Available"},
           {"time": "02:00 PM", "availability": "Available"}
         ],
-        "details": ""
+        "details": "C-reactive protein (CRP) is a protein made by the liver. The level of CRP increases when there's inflammation in the body. A simple blood test can check your C-reactive protein level. A high-sensitivity C-reactive protein (hs-CRP) test is more sensitive than a standard C-reactive protein test. That means the high-sensitivity test can find smaller increases in C-reactive protein than a standard test can. The hs-CRP test can help show the risk of getting coronary artery disease. In coronary artery disease, the arteries of the heart narrow. Narrowed arteries can lead to a heart attack. A high level of hs-CRP in the blood has been linked to an increased risk of heart attacks. Also, people who have had a heart attack are more likely to have another heart attack if they have a high hs-CRP level. But their risk goes down when their hs-CRP level is in the typical range. An hs-CRP test may be most useful for people who have a 10% to 20% chance of having a heart attack within the next 10 years. This is known as intermediate risk. A health care provider can determine your risk using tests that look at your lifestyle choices, family history and overall health."
     },
     {
         "_id": 6,
-        "title": "Complete Blood Count (CBC)",
-        "image": "cbc_image.jpg",
+        "title": "Prostate-Specific Antigen (PSA)",
+        "image": "https://i.ibb.co/QbF9pVV/psa-test-prostate.jpg",
         "date": "2024-01-01",
         "slots": [
           {"time": "09:00 AM", "availability": "Available"},
           {"time": "11:00 AM", "availability": "Available"},
           {"time": "02:00 PM", "availability": "Available"}
         ],
-        "details": ""
+        "details": "Prostate-specific antigen, or PSA, is a protein produced by normal, as well as malignant, cells of the prostate gland. The PSA test measures the level of PSA in the blood. For this test, a blood sample is sent to a laboratory for analysis. The results are usually reported as nanograms of PSA per milliliter (ng/mL) of blood. The blood level of PSA is often elevated in people with prostate cancer, and the PSA test was originally approved by the FDA in 1986 to monitor the progression of prostate cancer in men who had already been diagnosed with the disease. In 1994, FDA approved the PSA test to be used in conjunction with a digital rectal exam (DRE) to aid in the detection of prostate cancer in men 50 years and older. Until about 2008, many doctors and professional organizations had encouraged yearly PSA screening for prostate cancer beginning at age 50. PSA testing (along with a DRE) is also often used by health care providers for individuals who report prostate symptoms to help determine the nature of the problem. In addition to prostate cancer, several benign (not cancerous) conditions can cause a person’s PSA level to rise, particularly prostatitis (inflammation of the prostate) and benign prostatic hyperplasia (BPH) (enlargement of the prostate)."
     },
     {
         "_id": 7,
-        "title": "Complete Blood Count (CBC)",
-        "image": "cbc_image.jpg",
+        "title": "Electrocardiogram (ECG or EKG)",
+        "image": "https://i.ibb.co/2WXcVHp/recorded-tracing-called-electrocardiogram-ecg-ekg-typical-ecg-tracing-shown-to-right-different-waves.jpg",
         "date": "2024-01-01",
         "slots": [
           {"time": "09:00 AM", "availability": "Available"},
           {"time": "11:00 AM", "availability": "Available"},
           {"time": "02:00 PM", "availability": "Available"}
         ],
-        "details": ""
+        "details": "An electrocardiogram (ECG) is one of the simplest and fastest tests used to evaluate the heart. Electrodes (small, plastic patches that stick to the skin) are placed at certain spots on the chest, arms, and legs. The electrodes are connected to an ECG machine by lead wires. The electrical activity of the heart is then measured, interpreted, and printed out. No electricity is sent into the body. Natural electrical impulses coordinate contractions of the different parts of the heart to keep blood flowing the way it should. An ECG records these impulses to show how fast the heart is beating, the rhythm of the heart beats (steady or irregular), and the strength and timing of the electrical impulses as they move through the different parts of the heart. Changes in an ECG can be a sign of many heart-related conditions. An electrocardiogram (ECG) is a quick, easy way to assess the heart's function. Risks associated with ECG are minimal and rare. You will not feel anything during the ECG, but it may be uncomfortable when the sticky electrodes are taken off. If the electrode patches are left on too long they may cause tissue breakdown or skin irritation."
     },
     {
         "_id": 8,
-        "title": "Complete Blood Count (CBC)",
-        "image": "cbc_image.jpg",
+        "title": "Vitamin D Test",
+        "image": "https://i.ibb.co/hMvKXtC/A-man-trying-a-Medichecks-at-home-Vitamin-D-test-768x432-jpg.webp",
         "date": "2024-01-01",
         "slots": [
           {"time": "09:00 AM", "availability": "Available"},
           {"time": "11:00 AM", "availability": "Available"},
           {"time": "02:00 PM", "availability": "Available"}
         ],
-        "details": ""
+        "details": "A vitamin D test measures the level of vitamin D in your blood to make sure you have enough for your body to work well. Vitamin D is essential for healthy bones and teeth. It also helps keep your muscles, nerves, and immune system working normally. Having low levels of vitamin D is a common problem that can lead to bone disorders and other medical problems. Vitamin D testing can let you know if you need to increase your vitamin D levels. Before your body can use vitamin D, your liver must change it into another form called 25 hydroxyvitamin D, or 25(OH)D. Most vitamin D blood tests measure the level of 25(OH)D in your blood. Your kidneys use 25(OH)D to make active vitamin D. Active vitamin D lets your body use calcium to build bone and helps other cells work properly. If you have kidney problems or abnormal calcium levels in your blood, your health care provider may order a test of active vitamin D. But this test is not generally used to check whether you have enough vitamin D."
     },
     {
         "_id": 9,
-        "title": "Complete Blood Count (CBC)",
-        "image": "cbc_image.jpg",
+        "title": "Bone Density Test (DXA Scan)",
+        "image": "https://i.ibb.co/gt2Dsfx/Dexascan-Marquee.jpg",
         "date": "2024-01-01",
         "slots": [
           {"time": "09:00 AM", "availability": "Available"},
           {"time": "11:00 AM", "availability": "Available"},
           {"time": "02:00 PM", "availability": "Available"}
         ],
-        "details": ""
+        "details": "A bone density test measures how strong your bones are. The test will tell you if you have osteoporosis (or weak bones), and it can help you understand your risk of breaking a bone in the future. Women are at higher risk for osteoporosis than men, and the risk increases with age. If you’re a woman age 65 or older, schedule a bone density test. If you’re a woman age 64 or younger and you have gone through menopause, ask your doctor if you need a bone density test. Men can get osteoporosis, too. If you’re a man over age 65 and you’re concerned about your bone strength, talk with your doctor or nurse. Osteoporosis is a bone disease. It means your bones are weak and more likely to break. People with osteoporosis most often break bones in the hip, spine, and wrist. There are no signs or symptoms of osteoporosis. You might not know you have the disease until you break a bone. That’s why it’s so important to get a bone density test to measure your bone strength. "
     },
     {
         "_id": 10,
-        "title": "Complete Blood Count (CBC)",
-        "image": "cbc_image.jpg",
+        "title": "Cardiac Enzyme Pane",
+        "image": "https://i.ibb.co/Jyx8WH4/Blood-Test-for-Cancer.jpg",
         "date": "2024-01-01",
         "slots": [
           {"time": "09:00 AM", "availability": "Available"},
           {"time": "11:00 AM", "availability": "Available"},
           {"time": "02:00 PM", "availability": "Available"}
         ],
-        "details": ""
+        "details": "An enzyme marker test is a blood test to measure specific biological markers (biomarkers) in your blood. High (elevated) levels of cardiac enzymes can be a sign of a heart attack or another heart problem. Cardiac enzymes are also called cardiac biomarkers. Cardiac biomarkers help healthcare providers know if symptoms are due to a heart attack (myocardial infarction), angina, heart failure or another problem. Increases in cardiac enzymes can also indicate acute coronary syndrome (ACS) or myocardial ischemia. Treatments for these conditions vary. An accurate diagnosis is critical to ensuring you receive the appropriate care. A cardiac enzyme marker test requires a blood draw. The blood draw takes just a few minutes. In an emergency situation, the blood draw takes place in the emergency department or hospital. For non-urgent situations, the test may take place at your healthcare provider's office or a blood-testing lab."
     },
     {
         "_id": 11,
-        "title": "Complete Blood Count (CBC)",
-        "image": "cbc_image.jpg",
+        "title": "Thyroid Antibody Tests",
+        "image": "https://i.ibb.co/Bz6FVm3/thyroid-antibodies-3231533-f566253a47dc4602b828d0e58d9869ef.png",
         "date": "2024-01-01",
         "slots": [
           {"time": "09:00 AM", "availability": "Available"},
           {"time": "11:00 AM", "availability": "Available"},
           {"time": "02:00 PM", "availability": "Available"}
         ],
-        "details": ""
+        "details": "A thyroid antibody test measures the level of thyroid antibodies in a sample of your blood. Your thyroid is a small, butterfly-shaped gland in your neck. It makes hormones that control many activities in your body, including your heart rate and how fast you burn calories from food. Antibodies are proteins that your immune system makes to fight foreign substances, such as viruses and bacteria. But sometimes antibodies attack the healthy cells of your own tissues, and organs by mistake. This is called autoimmune disease. If tests of your thyroid hormone levels show that your thyroid isn't working properly, your provider may order thyroid antibody tests to see if an autoimmune disease is causing the problem."
     },
     {
         "_id": 12,
-        "title": "Complete Blood Count (CBC)",
-        "image": "cbc_image.jpg",
+        "title": "Human Immunodeficiency Virus (HIV) Test",
+        "image": "https://i.ibb.co/VMDL3Qh/122003-i-Stock-1341899607-jpg-d0f2bdf4-601e-4aef-86cf-13e7383fd08f.jpg",
         "date": "2024-01-01",
         "slots": [
           {"time": "09:00 AM", "availability": "Available"},
           {"time": "11:00 AM", "availability": "Available"},
           {"time": "02:00 PM", "availability": "Available"}
         ],
-        "details": ""
+        "details": "HIV testing determines if a person is infected with HIV. The human immunodeficiency virus (HIV) is the virus that causes acquired immunodeficiency syndrome (AIDS). AIDS is the most advanced stage of HIV infection.A negative HIV test result shows that you do not have HIV. Continue taking steps to avoid getting HIV, such as using condoms during sex and, if you are at high risk of getting HIV, taking medicines to prevent HIV (called pre-exposure prophylaxis or PrEP).A positive HIV test result shows that you have HIV, but you can still take steps to protect your health. Begin by talking to your health care provider about antiretroviral therapy (ART). People on ART take a combination of HIV medicines every day to treat HIV infection. ART is recommended for everyone who has HIV, and people with HIV should start ART as soon as possible. ART cannot cure HIV, but HIV medicines help people with HIV live longer, healthier lives."
     }
 ]
