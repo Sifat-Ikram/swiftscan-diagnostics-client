@@ -11,6 +11,8 @@ import Home from './components/pages/home_page/home/Home.jsx';
 import SignUp from './components/pages/sign/SignUp.jsx';
 import AuthProvider from './components/provider/AuthProvider.jsx';
 import SignIn from './components/pages/sign/SignIn.jsx';
+import AllTest from './components/pages/all_test/AllTest.jsx';
+import TestDetails from './components/pages/details/TestDetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
       {
         path: '/signIn',
         element: <SignIn></SignIn>
+      },
+      {
+        path: '/allTest',
+        element: <AllTest></AllTest>
+      },
+      {
+        path: '/details/:id',
+        element: <TestDetails></TestDetails>
       }
     ]
   },

@@ -59,7 +59,7 @@ const SignUp = () => {
                     })
 
 
-                
+
 
 
             })
@@ -101,7 +101,7 @@ const SignUp = () => {
                                     <label className="label">
                                         <span className="label-text">Your Blood Group</span>
                                     </label>
-                                    <select  {...register("bloodGroup")} className="select select-bordered w-full max-w-xs">
+                                    <select  {...register("bloodGroup")} className="select select-bordered w-full">
                                         <option disabled>Select your blood group</option>
                                         <option value="A+">A+</option>
                                         <option value="A-">A-</option>
@@ -115,11 +115,11 @@ const SignUp = () => {
                                 </div>
                             </div>
                             <div className='lg:flex justify-between gap-3'>
-                            <div className='flex-1'>
+                                <div className='flex-1'>
                                     <label className="label">
                                         <span className="label-text">Your District</span>
                                     </label>
-                                    <select {...register("district")} className="select select-bordered w-full max-w-xs">
+                                    <select {...register("district")} className="select select-bordered w-full">
                                         <option disabled>Select your blood group</option>
                                         <option value="A+">A+</option>
                                         <option value="A-">A-</option>
@@ -135,7 +135,7 @@ const SignUp = () => {
                                     <label className="label">
                                         <span className="label-text">Your Upazila</span>
                                     </label>
-                                    <select {...register("upazila")} className="select select-bordered w-full max-w-xs">
+                                    <select {...register("upazila")} className="select select-bordered w-full">
                                         <option disabled>Select your blood group</option>
                                         <option value="A+">A+</option>
                                         <option value="A-">A-</option>
@@ -169,7 +169,7 @@ const SignUp = () => {
                             }
                         </form>
                         <div className='flex justify-center mt-5'>
-                            <button onClick={handleGoogleRegister} className='w-1/3 mx-auto btn btn-outline hover:text-white border-[#0845F4] hover:bg-[#0845F4]'><FaGoogle></FaGoogle> Sign up with Google</button>
+                            <button onClick={handleGoogleRegister} className='w-1/3 mx-auto btn btn-outline hover:text-white border-[#0845F4] hover:bg-[#0845F4]'><FaGoogle></FaGoogle> Sign up</button>
                         </div>
                     </div>
                 </div>

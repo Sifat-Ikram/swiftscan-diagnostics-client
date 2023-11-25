@@ -3,24 +3,41 @@ import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const SignIn = () => {
-    const { logIn } = useContext(AuthContext);
+    const { logIn, googleRegister } = useContext(AuthContext);
     const { register, handleSubmit } = useForm();
     const location = useLocation();
     const navigate = useNavigate();
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
 
+    const handleGoogleRegister = () => {
+        googleRegister()
+            .then(res => {
+                console.log(res);
+                const userInfo = {
+                    email: res.user?.email,
+                    name: res.user?.displayName
+                }
+            })
+            .catch(err => console.error(err.message))
+    }
 
     const onSubmit = (data) => {
 
         logIn(data.email, data.password)
             .then(res => {
                 console.log(res.user);
+                Swal.fire({
+                    position: "top-end",
+                    title: "You signed up successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
                 navigate(location?.state ? location.state : '/')
-                setSuccess('');
-
+                setSuccess('');               
             })
             .catch(err => {
                 console.error(err.message);
@@ -59,6 +76,9 @@ const SignIn = () => {
                             </div>
                             <h1>Don't have an account yet, <a className='text-blue-700' href='/signUp'>Sign up</a> here</h1>
                         </form>
+                        <div className='flex justify-center items-center mt-5'>
+                            <button onClick={handleGoogleRegister} className='w-1/3 mx-auto btn btn-outline hover:text-white border-[#0845F4] hover:bg-[#0845F4]'><FaGoogle></FaGoogle> Sign in</button>
+                        </div>
                     </div>
                 </div>
             </div>
