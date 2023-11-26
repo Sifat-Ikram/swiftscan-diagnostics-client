@@ -13,6 +13,14 @@ import AuthProvider from './components/provider/AuthProvider.jsx';
 import SignIn from './components/pages/sign/SignIn.jsx';
 import AllTest from './components/pages/all_test/AllTest.jsx';
 import TestDetails from './components/pages/details/TestDetails.jsx';
+import {
+  QueryClient,
+  QueryClientProvider
+} from '@tanstack/react-query'
+import Dashboard from './components/pages/dashboard/Dashboard.jsx';
+import Booking from '../src/components/pages/user_route/bookings/Booking.jsx';
+
+const queryClient = new QueryClient()
 
 
 const router = createBrowserRouter([
@@ -35,20 +43,34 @@ const router = createBrowserRouter([
       },
       {
         path: '/allTest',
-        element: <AllTest></AllTest>
+        element: <AllTest></AllTest>,
+        loader: () => fetch('http://localhost:4321/service')
       },
       {
         path: '/details/:id',
-        element: <TestDetails></TestDetails>
+        element: <TestDetails></TestDetails>,
+        loader: () => fetch('http://localhost:4321/service')
       }
     ]
   },
+  {
+    path: '/dashboard',
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: '/dashboard/myBookings',
+        element: <Booking></Booking>
+      }
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </AuthProvider>
   </React.StrictMode>,
 )

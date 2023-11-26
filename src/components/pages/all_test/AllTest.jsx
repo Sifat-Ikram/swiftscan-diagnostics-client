@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const AllTest = () => {
     const [value, setValue] = useState([]);
-    const [tests, setTests] = useState([]);
-
-    useEffect(() => {
-        fetch('tests.json')
-            .then(res => res.json())
-            .then(data => setTests(data));
-    }, [])
+    const tests = useLoaderData();
     
     const handleSearch = (e) =>{
         // e.preventDefault()
@@ -41,7 +35,9 @@ const AllTest = () => {
                                 <h2 className="card-title">Test title: {test.title}</h2>
                                 <p>Available date: {test.date}</p>
                                 <div className="card-actions justify-end">
-                                    <Link to={`/details/${test._id}`}><button className="btn btn-outline text-[#0845F4] border-[#0845F4] all-btn">View Details</button></Link>
+                                    <Link to={`/details/${test._id}`}>
+                                    <button className="btn btn-outline text-[#0845F4] border-[#0845F4] all-btn">View Details</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

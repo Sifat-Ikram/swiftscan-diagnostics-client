@@ -6,12 +6,12 @@ const FeaturedTest = () => {
     const [tests, setTests] = useState([]);
 
     useEffect(() => {
-        fetch('/tests.json')
+        fetch('http://localhost:4321/service')
             .then(res => res.json())
             .then(data => setTests(data));
     }, [])
 
-    console.log(tests);
+    
 
     return (
         <div>

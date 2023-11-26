@@ -3,14 +3,15 @@ import { ToastContainer, toast } from 'react-toast'
 import { useForm } from "react-hook-form";
 import { updateProfile } from 'firebase/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
-// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../provider/AuthProvider';
+import axios from 'axios';
+
 
 const SignUp = () => {
-    // const axiosPublic = useAxiosPublic();
     const { createUser, googleRegister } = useContext(AuthContext);
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const location = useLocation();
     const navigate = useNavigate();
     const [error, setError] = useState('');
@@ -24,6 +25,11 @@ const SignUp = () => {
                     email: res.user?.email,
                     name: res.user?.displayName
                 }
+                axios.post('http://localhost:4321/user', userInfo)
+                .then(res =>{
+                    console.log(res.data);
+                    navigate(location?.state ? location.state : '/')
+                })
             })
             .catch(err => console.error(err.message))
     }
@@ -59,8 +65,21 @@ const SignUp = () => {
                     })
 
 
+                const userInfo = {
+                    name: data.name,
+                    email: data.email
+                }
+                axios.post('http://localhost:4321/user', userInfo)
+                    .then(res => {
 
-
+                        if(res.data.insertedId) {
+                            Swal.fire("You signed up successfully!");
+                            navigate(location?.state ? location.state : '/');
+                        }
+                        else {
+                            Swal.fire("Your signed up failed!");
+                        }
+                    })
 
             })
             .catch(err => {
@@ -95,7 +114,7 @@ const SignUp = () => {
                                     <label className="label">
                                         <span className="label-text">Avatar</span>
                                     </label>
-                                    <input name='photoUrl' {...register("photoUrl")} type="text" placeholder="Your photo url" className="input input-bordered w-full" />
+                                    <input name='photoUrl' {...register("photo")} type="text" placeholder="Your photo url" className="input input-bordered w-full" />
                                 </div>
                                 <div className='flex-1'>
                                     <label className="label">
