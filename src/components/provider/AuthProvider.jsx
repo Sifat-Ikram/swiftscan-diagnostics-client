@@ -1,8 +1,10 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../firebase/firebase.config.js';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import axios from 'axios';
 
-
+// admin email: swiftscan@diagnostics.com
+// admin password: swiftscan123
 
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
@@ -42,20 +44,20 @@ const AuthProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, (observer)=>{
            console.log("Watcher", observer);
            setUser(observer);
-        //    if (observer) {
-        //     const userInfo = { email: observer.email };
-        //     axios.post('http://localhost:4321/jwt', userInfo)
-        //     .then(res =>{
-        //         if (res.data.token) {
-        //             localStorage.setItem('access-token', res.data.token);
-        //             setLoading(false);
-        //         }
-        //         else{
-        //             localStorage.removeItem('access-token');
-        //             setLoading(false);
-        //         }
-        //     })
-        //    }
+           if (observer) {
+            const userInfo = { email: observer.email };
+            axios.post('http://localhost:4321/jwt', userInfo)
+            .then(res =>{
+                if (res.data.token) {
+                    localStorage.setItem('access-token', res.data.token);
+                    setLoading(false);
+                }
+                else{
+                    localStorage.removeItem('access-token');
+                    setLoading(false);
+                }
+            })
+           }
            
         })
         return ()=>{

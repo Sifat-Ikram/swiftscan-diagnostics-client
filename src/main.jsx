@@ -19,6 +19,7 @@ import {
 } from '@tanstack/react-query'
 import Dashboard from './components/pages/dashboard/Dashboard.jsx';
 import Booking from '../src/components/pages/user_route/bookings/Booking.jsx';
+import AllUser from './components/pages/admin_route/AllUser.jsx';
 
 const queryClient = new QueryClient()
 
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/myBookings',
         element: <Booking></Booking>
+      },
+      {
+        path: '/dashboard/allUser',
+        element: <AllUser></AllUser>
       }
     ]
   }
