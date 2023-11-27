@@ -26,7 +26,8 @@ const TestDetails = () => {
                 title,
                 image,
                 price,
-                details
+                details,
+                date
             }
             axiosSecure.post('/carts', cartItem)
                 .then(res => {
@@ -54,11 +55,6 @@ const TestDetails = () => {
                 confirmButtonText: "sign in"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    //   Swal.fire({
-                    //     title: "Deleted!",
-                    //     text: "Your file has been deleted.",
-                    //     icon: "success"
-                    //   });
                     navigate('/signIn');
                 }
             });
@@ -74,7 +70,7 @@ const TestDetails = () => {
                 <h1 className="text-lg font-medium">Price: ${price}</h1>
                 <div>
                     {
-                        slots.map(item => <div key={item.time} className='flex justify-center gap-10 items-center'>
+                        slots?.map(item => <div key={item.id} className='flex justify-center gap-10 items-center'>
                             <h1>{item.time}</h1>
                             <h1>{item.availability}</h1>
                         </div>)

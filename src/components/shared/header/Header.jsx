@@ -1,14 +1,19 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import useAdmin from '../../hooks/useAdmin';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+    const [ isAdmin ] = useAdmin();
     const navLinks = <>
         <li><a className='rounded-md uppercase' href={'/'}>HOME</a></li>
         <li><a className='rounded-md uppercase' href={'/allTest'}>All Tests</a></li>
         {
-            user && <li><a className='rounded-md uppercase' href={'/dashboard'}>DASHBOARD</a></li>
+            user && !isAdmin && <li><a className='rounded-md uppercase' href={'/dashboard/myProfile'}>My Profile</a></li>
+        }
+        {
+            user && isAdmin && <li><a className='rounded-md uppercase' href={'/dashboard/allUser'}>Dashboard</a></li>
         }
         <li><a className='rounded-md uppercase' href={'/contact'}>CONTACT US</a></li>
         <li><a className='rounded-md uppercase' href={'/about'}>About Us</a></li>
@@ -31,9 +36,9 @@ const Header = () => {
                 <div className="navbar-start text-white">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu text-[#0845F4] font-semibold rounded-xs menu-sm dropdown-content mt-3 z-[1] p-2 shadow w-52">
+                        <ul tabIndex={0} className="menu text-[#0845F4] font-semibold rounded-xs menu-md dropdown-content bg-white mt-3 z-[1] p-2 shadow-xl w-52">
                             {navLinks}
                         </ul>
                     </div>

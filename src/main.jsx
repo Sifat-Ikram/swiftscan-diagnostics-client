@@ -20,6 +20,10 @@ import {
 import Dashboard from './components/pages/dashboard/Dashboard.jsx';
 import Booking from '../src/components/pages/user_route/bookings/Booking.jsx';
 import AllUser from './components/pages/admin_route/AllUser.jsx';
+import MyProfile from './components/pages/user_route/profile/MyProfile.jsx';
+import UpdatePage from './components/pages/updatePage/UpdatePage.jsx';
+import AddTest from './components/pages/admin_route/addTest.jsx';
+import AdminAllTest from './components/pages/admin_route/AdminAllTest.jsx';
 
 const queryClient = new QueryClient()
 
@@ -65,6 +69,23 @@ const router = createBrowserRouter([
       {
         path: '/dashboard/allUser',
         element: <AllUser></AllUser>
+      },
+      {
+        path: "/dashboard/myProfile",
+        element: <MyProfile></MyProfile>
+      },
+      {
+        path: '/dashboard/update/:id',
+        element: <UpdatePage></UpdatePage>
+      },
+      {
+        path: '/dashboard/addTest',
+        element: <AddTest></AddTest>
+      },
+      {
+        path: '/dashboard/AllTest',
+        element: <AdminAllTest></AdminAllTest>,
+        loader: () => fetch('http://localhost:4321/service')
       }
     ]
   }

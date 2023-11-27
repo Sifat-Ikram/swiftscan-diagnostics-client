@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const AllTest = () => {
@@ -7,7 +7,7 @@ const AllTest = () => {
     
     const handleSearch = (e) =>{
         // e.preventDefault()
-        setValue(e.target.value.toLowerCase());
+        setValue(e.target.value);
            
     }
     
@@ -16,7 +16,7 @@ const AllTest = () => {
             return tests;
         }
         else{
-            return tests.filter(test => test.date.toLowerCase().includes(value));
+            return tests.filter(test => test.date.includes(value));
         }
     }
     const filteredTests = getFilteredCategory();

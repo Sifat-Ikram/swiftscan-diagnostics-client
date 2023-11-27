@@ -38,8 +38,8 @@ const Booking = () => {
 
     return (
         <div className='w-11/12 mx-auto'>
-            <div className='border-t-2 border-b-2 border-gray-300 py-3 w-60 mx-auto text-center'>
-                <h1 className='uppercase text-2xl'>all bookings</h1>
+            <div className='w-full bg-[#0845F4] py-5'>
+                <h1 className='text-white uppercase text-4xl text-extrabold text-center'>all bookings</h1>
             </div>
             <div className='p-2 mt-10'>
                 <div className="overflow-x-auto mt-3">
@@ -48,10 +48,10 @@ const Booking = () => {
                         <thead className='bg-[#0845F4] rounded-lg'>
                             <tr>
                                 <th className='text-base font-semibold text-white'></th>
-                                <th className='text-base font-semibold text-white'>Item Image</th>
-                                <th className='text-base font-semibold text-white'>Item Name</th>
+                                <th className='text-base font-semibold text-white'>Image</th>
+                                <th className='text-base font-semibold text-white'>Test Name</th>
                                 <th className='text-base font-semibold text-white'>Price</th>
-                                <th className='text-base font-semibold text-white'>Action</th>
+                                <th className='text-base font-semibold text-white'>Appointment date</th>
                                 <th className='text-base font-semibold text-white'>Action</th>
                             </tr>
                         </thead>
@@ -80,9 +80,13 @@ const Booking = () => {
                                             <div className="font-bold">${item.price}</div>
                                         </div>
                                     </td>
-                                    <td><Link><MdEditNote className='text-4xl bg-[#ac7e13af] text-white p-2 cursor-pointer rounded-md'></MdEditNote></Link></td>
                                     <td>
-                                        <MdDelete onClick={()=> handleDelete(item._id)} className='text-4xl cursor-pointer bg-red-700 text-white p-2 rounded-md'></MdDelete>
+                                        <div>
+                                            <div className="font-bold">{item.date}</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <MdDelete onClick={() => handleDelete(item._id)} className='text-4xl cursor-pointer bg-red-700 text-white p-2 rounded-md'></MdDelete>
                                     </td>
                                 </tr>)
                             }

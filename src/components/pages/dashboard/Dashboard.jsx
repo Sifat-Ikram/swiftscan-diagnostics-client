@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaAtlas, FaBars, FaCalendarAlt, FaCalendarCheck, FaHome, FaShoppingBag, FaShoppingCart, FaTools, FaUsers } from "react-icons/fa";
 import { MdMenu, MdMessage, MdPayment, MdReviews, MdInsertPhoto } from "react-icons/md";
 import { PiNotebookFill } from "react-icons/pi";
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import useAdmin from '../../hooks/useAdmin';
 import useCart from '../../hooks/useCart';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Dashboard = () => {
     const [cart] = useCart();
     const [ isAdmin ] = useAdmin();
+
+    
     return (
         <div className='w-11/12 mx-auto flex'>
-            <div className='w-64 min-h-screen p-5 bg-[#0845F4] uppercase'>
+            <div className='w-52 min-h-screen p-3 bg-[#0845F4] uppercase'>
                 <a className="font-cinzel block text-center text-white cursor-pointer mb-10" href='/'>
                     <h1 className='text-2xl font-extrabold'>swiftscan</h1>
                     <h1 className='text-base font-semibold'>diagnostic</h1>
