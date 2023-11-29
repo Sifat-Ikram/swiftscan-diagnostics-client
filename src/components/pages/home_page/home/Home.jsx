@@ -6,6 +6,7 @@ import OtherSupport from '../support/OtherSupport';
 import Promotions from '../promotion/Promotions';
 
 const Home = () => {
+
     return (
         <div className='w-5/6 mx-auto'>
             <Banner></Banner>

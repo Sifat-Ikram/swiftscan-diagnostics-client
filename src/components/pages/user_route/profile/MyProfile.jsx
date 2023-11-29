@@ -9,7 +9,7 @@ const MyProfile = () => {
     const { user } = useContext(AuthContext);
 
     const { data: currentUser = [], refetch } = useQuery({
-        queryKey: ['users'],
+        queryKey: ['currentUser.email'],
         queryFn: async () => {
             const res = await axiosPublic.get('/user');
             return res.data;
@@ -22,7 +22,7 @@ const MyProfile = () => {
 
     const loggedUser = currentUser.find(cUser => cUser.email === user.email);
 
-    const { bloodGroup, district, email, name, photoUrl, upazila, _id } = loggedUser;
+    const { bloodGroup, district, email, name, photoUrl, _id } = loggedUser;
 
     return (
         <div className='w-11/12 mx-auto'>
@@ -36,7 +36,6 @@ const MyProfile = () => {
                         <h1 className='text-xl'><span className='text-2xl font-bold mr-5'>Name: </span>{name}</h1>
                         <h1 className='text-xl'><span className='text-2xl font-bold mr-5'>Email: </span>{email}</h1>
                         <h1 className='text-xl'><span className='text-2xl font-bold mr-5'>District: </span>{district}</h1>
-                        <h1 className='text-xl'><span className='text-2xl font-bold mr-5'>Upazilla: </span>{upazila}</h1>
                         <h1 className='text-xl'><span className='text-2xl font-bold mr-5'>Blood Group: </span>{bloodGroup}</h1>
                     </div>
                     <div className='mb-20'>

@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const SignIn = () => {
     const { logIn, googleRegister } = useContext(AuthContext);
@@ -16,11 +17,16 @@ const SignIn = () => {
     const handleGoogleRegister = () => {
         googleRegister()
             .then(res => {
-                console.log(res);
+                
                 const userInfo = {
                     email: res.user?.email,
                     name: res.user?.displayName
                 }
+                axios.post('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/user', userInfo)
+                    .then(res => {
+                        
+                        navigate(location?.state ? location.state : '/')
+                    })
             })
             .catch(err => console.error(err.message))
     }
@@ -29,7 +35,7 @@ const SignIn = () => {
 
         logIn(data.email, data.password)
             .then(res => {
-                console.log(res.user);
+                
                 Swal.fire({
                     position: "top-end",
                     title: "You signed up successfully",

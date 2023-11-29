@@ -1,21 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
 const FeaturedTest = () => {
 
-    const [tests, setTests] = useState([]);
+    const { data: tests = [] } = useQuery({
+        queryKey: ['tests._id'],
+        queryFn: async () => {
+            const res = await axios.get('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/service');
+            return res.data;
+        },
+        onError: (error) => {
+            // Handle error (e.g., show an error message)
+            console.error("Error fetching data:", error);
+        }
+    })
 
-    useEffect(() => {
-        fetch('http://localhost:4321/service')
-            .then(res => res.json())
-            .then(data => setTests(data));
-    }, [])
-
+    if (!tests.length) {
+        return <span className="loading loading-dots loading-lg"></span>;
+    }
     
 
     return (
         <div>
-            <h1 className='text-4xl font-bold my-10'>Popular Packages</h1>
+            <h1 className='text-4xl font-bold my-10'>Featured Tests</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     tests.slice(0, 6).map(test => <div key={test._id}>

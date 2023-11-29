@@ -52,7 +52,7 @@ const Dashboard = () => {
                                 </NavLink></li>
                                 <li><NavLink to={'/dashboard/myBookings'} style={({ isActive }) => ({ background: isActive ? "#0830A5" : "" })} className='flex items-center ga text-white font-cinzel gap-2 text-base p-2 rounded-md'>
                                     <FaCalendarCheck></FaCalendarCheck>
-                                    <h1 className='font-bold'>my bookings({cart.length})</h1>
+                                    <h1 className='font-bold'>Appointments({cart.length})</h1>
                                 </NavLink></li>
                                 <li><NavLink to={'/dashboard/testResult'} style={({ isActive }) => ({ background: isActive ? "#0830A5" : "" })} className='flex items-center text-white font-cinzel gap-2 text-base p-2 rounded-md'>
                                     <MdPayment></MdPayment>

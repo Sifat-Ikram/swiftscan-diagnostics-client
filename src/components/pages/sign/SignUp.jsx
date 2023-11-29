@@ -7,9 +7,11 @@ import Swal from 'sweetalert2';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../provider/AuthProvider';
 import axios from 'axios';
+import { useEffect } from 'react';
 
 
 const SignUp = () => {
+    const [district, setDistrict] = useState(null);
     const { createUser, googleRegister } = useContext(AuthContext);
     const { register, handleSubmit, reset } = useForm();
     const location = useLocation();
@@ -17,25 +19,37 @@ const SignUp = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
+    useEffect(() => {
+        fetch('district.json')
+            .then(res => res.json())
+            .then(data => {
+                setDistrict(data);
+            })
+    }, [])
+
+    if (!district) {
+        return <span className="loading loading-dots loading-lg"></span>;
+    }
+
     const handleGoogleRegister = () => {
         googleRegister()
             .then(res => {
-                console.log(res);
+                
                 const userInfo = {
                     email: res.user?.email,
                     name: res.user?.displayName
                 }
-                axios.post('http://localhost:4321/user', userInfo)
-                .then(res =>{
-                    console.log(res.data);
-                    navigate(location?.state ? location.state : '/')
-                })
+                axios.post('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/user', userInfo)
+                    .then(res => {
+                        
+                        navigate(location?.state ? location.state : '/')
+                    })
             })
             .catch(err => console.error(err.message))
     }
 
     const onSubmit = (data) => {
-        console.log(data)
+        
 
         const regex = /^(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
         if (data.password.length < 6) {
@@ -49,7 +63,7 @@ const SignUp = () => {
 
         createUser(data.email, data.password)
             .then(res => {
-                console.log(res.user);
+                
 
 
                 setSuccess('');
@@ -70,13 +84,12 @@ const SignUp = () => {
                     email: data.email,
                     photoUrl: data.photo,
                     bloodGroup: data.bloodGroup,
-                    district: data.district,
-                    upazila: data.upazila
+                    district: data.district
                 }
-                axios.post('http://localhost:4321/user', userInfo)
+                axios.post('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/user', userInfo)
                     .then(res => {
 
-                        if(res.data.insertedId) {
+                        if (res.data.insertedId) {
                             Swal.fire("You signed up successfully!");
                             navigate(location?.state ? location.state : '/');
                         }
@@ -143,31 +156,9 @@ const SignUp = () => {
                                         <span className="label-text">Your District</span>
                                     </label>
                                     <select {...register("district")} className="select select-bordered w-full">
-                                        <option disabled>Select your blood group</option>
-                                        <option value="A+">A+</option>
-                                        <option value="A-">A-</option>
-                                        <option value="B+">B+</option>
-                                        <option value="B-">B-</option>
-                                        <option value="AB+">AB+</option>
-                                        <option value="AB-">AB-</option>
-                                        <option value="O+">O+</option>
-                                        <option value="O-">O-</option>
-                                    </select>
-                                </div>
-                                <div className='flex-1'>
-                                    <label className="label">
-                                        <span className="label-text">Your Upazila</span>
-                                    </label>
-                                    <select {...register("upazila")} className="select select-bordered w-full">
-                                        <option disabled>Select your blood group</option>
-                                        <option value="A+">A+</option>
-                                        <option value="A-">A-</option>
-                                        <option value="B+">B+</option>
-                                        <option value="B-">B-</option>
-                                        <option value="AB+">AB+</option>
-                                        <option value="AB-">AB-</option>
-                                        <option value="O+">O+</option>
-                                        <option value="O-">O-</option>
+                                        {
+                                            district.map(dist => <option key={dist.id} value={dist.name}>{dist.name}</option>)
+                                        }
                                     </select>
                                 </div>
                             </div>

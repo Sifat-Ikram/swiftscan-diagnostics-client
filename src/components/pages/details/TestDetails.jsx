@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
-import useAxiosSecure from '../../hooks/useAxiosSecure';
+import useAxiosPublic from '../../hooks/useAxiosPublic';
 import useCart from '../../hooks/useCart';
+import { useQuery } from '@tanstack/react-query';
 
 
 const TestDetails = () => {
@@ -11,15 +12,22 @@ const TestDetails = () => {
     const tests = useLoaderData();
     const { user } = useAuth();
     const navigate = useNavigate();
-    const axiosSecure = useAxiosSecure();
+    const axiosPublic = useAxiosPublic();
     const [, refetch] = useCart();
 
-    const filteredTest = tests.find(test => test._id == id);
+
+    const filteredTest = tests.filter(test => test._id == id);
+
+
+    if (!filteredTest) {
+        return <span className="loading loading-dots loading-lg"></span> ;
+    }
+
     const { title, image, date, details, slots, _id, price } = filteredTest;
 
     const handleApply = () => {
         if (user && user.email) {
-            console.log(user.email);
+            
             const cartItem = {
                 menuId: _id,
                 email: user.email,
@@ -29,7 +37,7 @@ const TestDetails = () => {
                 details,
                 date
             }
-            axiosSecure.post('/carts', cartItem)
+            axiosPublic.post('/cart', cartItem)
                 .then(res => {
                     console.log(res.data);
                     if (res.data.insertedId) {

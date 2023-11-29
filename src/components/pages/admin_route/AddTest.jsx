@@ -1,16 +1,12 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
-import useAxiosSecure from '../../hooks/useAxiosSecure';
-import useAxiosPublic from '../../hooks/useAxiosSecure';
 import axios from 'axios';
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const AddTest = () => {
     const { register, handleSubmit, reset } = useForm();
-    const axiosSecure = useAxiosSecure();
-    const axiosPublic = useAxiosPublic();
 
     const onSubmit = async (data) => {
         console.log(data)
@@ -21,7 +17,7 @@ const AddTest = () => {
             }
         });
 
-        // console.log('Image Upload Response:', res.data);
+       
 
         if (res.data.data.display_url) {
             const testInfo = {
@@ -49,8 +45,8 @@ const AddTest = () => {
                 image: res.data.data.display_url
             }
 
-            const testRes = await axios.post('http://localhost:4321/service', testInfo);
-            console.log(testRes.data);
+            const testRes = await axios.post('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/service', testInfo);
+            
             if (testRes.data.insertedId) {
                 Swal.fire("Test added successfully");
                 reset();

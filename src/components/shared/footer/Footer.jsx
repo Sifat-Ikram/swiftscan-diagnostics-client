@@ -5,8 +5,8 @@ const Footer = () => {
         <div>
             <footer className="footer footer-center p-10 bg-[#0845F4] text-base-content rounded-none">
                 <nav className="grid grid-flow-col gap-4">
-                    <a className="link link-hover text-white font-semibold">About us</a>
-                    <a className="link link-hover text-white font-semibold">Contact</a>
+                    <a className="link link-hover text-white font-semibold" href='/about'>About us</a>
+                    <a className="link link-hover text-white font-semibold" href='/contact'>Contact</a>
                     <a className="link link-hover text-white font-semibold">Blog</a>
                     <a className="link link-hover text-white font-semibold">Press kit</a>
                 </nav>
