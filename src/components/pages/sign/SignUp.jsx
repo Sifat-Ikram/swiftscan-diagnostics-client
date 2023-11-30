@@ -39,7 +39,7 @@ const SignUp = () => {
                     email: res.user?.email,
                     name: res.user?.displayName
                 }
-                axios.post('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/user', userInfo)
+                axios.post('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/user', userInfo)
                     .then(res => {
                         
                         navigate(location?.state ? location.state : '/')
@@ -86,7 +86,7 @@ const SignUp = () => {
                     bloodGroup: data.bloodGroup,
                     district: data.district
                 }
-                axios.post('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/user', userInfo)
+                axios.post('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/user', userInfo)
                     .then(res => {
 
                         if (res.data.insertedId) {

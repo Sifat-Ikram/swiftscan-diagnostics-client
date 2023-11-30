@@ -55,12 +55,12 @@ const router = createBrowserRouter([
       {
         path: '/allTest',
         element: <AllTest></AllTest>,
-        loader: () => fetch('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/service')
+        loader: () => fetch('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/service')
       },
       {
         path: '/details/:id',
         element: <TestDetails></TestDetails>,
-        loader: () => fetch('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/service')
+        loader: () => fetch('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/service')
       },
       {
         path: '/contact',
@@ -104,7 +104,7 @@ const router = createBrowserRouter([
       {
         path:'/dashboard/adminUpdate/:id',
         element: <AdminUpdate></AdminUpdate>,
-        loader: () => fetch('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/service')
+        loader: () => fetch('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/service')
       },
       {
         path: '/dashboard/reservation',

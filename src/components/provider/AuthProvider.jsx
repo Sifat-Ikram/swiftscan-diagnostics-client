@@ -3,9 +3,6 @@ import app from '../firebase/firebase.config.js';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import axios from 'axios';
 
-// admin email: swiftscan@diagnostics.com
-// admin password: swiftscan123
-
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 export const AuthContext = createContext(null);
@@ -46,7 +43,7 @@ const AuthProvider = ({ children }) => {
            setUser(observer);
            if (observer) {
             const userInfo = { email: observer.email };
-            axios.post('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/jwt', userInfo)
+            axios.post('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/jwt', userInfo, {withCredentials: true})
             .then(res =>{
                 if (res.data.token) {
                     localStorage.setItem('access-token', res.data.token);
@@ -58,7 +55,6 @@ const AuthProvider = ({ children }) => {
                 }
             })
            }
-           
         })
         return ()=>{
             unSubscribe();

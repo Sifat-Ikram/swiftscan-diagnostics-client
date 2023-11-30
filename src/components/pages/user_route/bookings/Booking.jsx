@@ -20,7 +20,7 @@ const Booking = () => {
             confirmButtonText: "Yes"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/cart/${id}`)
+                axios.delete(`https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/cart/${id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             refetch();

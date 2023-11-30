@@ -6,9 +6,9 @@ import axios from 'axios';
 const FeaturedTest = () => {
 
     const { data: tests = [] } = useQuery({
-        queryKey: ['tests._id'],
+        queryKey: ['tests'],
         queryFn: async () => {
-            const res = await axios.get('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/service');
+            const res = await axios.get('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/service');
             return res.data;
         },
         onError: (error) => {

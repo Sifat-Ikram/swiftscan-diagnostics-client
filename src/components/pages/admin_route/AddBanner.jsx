@@ -21,7 +21,7 @@ const AddBanner = () => {
         //         image: data.image
         //     }
 
-        //     const testRes = await axios.patch('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/banner', testInfo);
+        //     const testRes = await axios.patch('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/banner', testInfo);
             
         //     if (testRes.data.modifiedId) {
         //         Swal.fire("Banner information updated successfully");

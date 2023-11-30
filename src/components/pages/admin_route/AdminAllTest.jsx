@@ -29,7 +29,7 @@ const AdminAllTest = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/service/${item._id}`)
+                axios.delete(`https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/service/${item._id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             Swal.fire({

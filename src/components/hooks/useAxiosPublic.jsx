@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosPublic = axios.create({
-    baseURL: 'http://localhost:4321'
+    baseURL: 'https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app'
 })
 
 const useAxiosPublic = () => {

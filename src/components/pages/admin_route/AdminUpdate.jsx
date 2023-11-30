@@ -55,7 +55,7 @@ const AdminUpdate = () => {
                 ]
             }
 
-            const testRes = await axios.patch(`https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/service/${_id}`, testInfo);
+            const testRes = await axios.patch(`https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/service/${_id}`, testInfo);
             
             if (testRes.data.modifiedCount) {
                 Swal.fire("Test updated successfully");

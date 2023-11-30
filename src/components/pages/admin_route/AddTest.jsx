@@ -45,7 +45,7 @@ const AddTest = () => {
                 image: res.data.data.display_url
             }
 
-            const testRes = await axios.post('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/service', testInfo);
+            const testRes = await axios.post('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/service', testInfo);
             
             if (testRes.data.insertedId) {
                 Swal.fire("Test added successfully");

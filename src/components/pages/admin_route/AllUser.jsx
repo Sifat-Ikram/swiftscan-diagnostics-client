@@ -27,11 +27,11 @@ const AllUser = () => {
             confirmButtonText: "Yes"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.patch(`https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/user/admin/${user._id}`)
+                axios.patch(`https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/user/admin/${user._id}`)
                     .then(res => {
                         refetch();
                         if (res.data.modifiedCount > 0) {
-                            refetch();
+                            
                             Swal.fire({
                                 title: `${user._id} is admin now!`,
                                 text: "",
@@ -55,8 +55,9 @@ const AllUser = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/user/${user._id}`)
+                axios.delete(`https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/user/${user._id}`)
                     .then(res => {
+                        refetch();
                         if (res.data.deletedCount > 0) {
                             Swal.fire({
                                 title: "User Deleted!",

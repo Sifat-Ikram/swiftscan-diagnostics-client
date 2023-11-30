@@ -10,7 +10,7 @@ const Reservations = () => {
     const { data: bookings = [], refetch } = useQuery({
         queryKey: ['booking'],
         queryFn: async () => {
-            const res = await axiosSecure.get('https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/cart/admin');
+            const res = await axiosSecure.get('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/cart/admin');
             return res.data;
         }
     })
@@ -27,7 +27,7 @@ const Reservations = () => {
             confirmButtonText: "delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axiosSecure.delete(`https://swiftscan-diagnostics-server-lb3etl9gp-md-sifat-ikrams-projects.vercel.app/cart/admin/${item.menuId}`)
+                axiosSecure.delete(`https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/cart/admin/${item.menuId}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             Swal.fire({
