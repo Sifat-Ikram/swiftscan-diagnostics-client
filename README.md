@@ -1,6 +1,6 @@
 website name: Swiftscan diagnostics
 
-Live link: https://swiftscan-diagnostics.web.app
+Live link: https://swiftscan-diagnostics.web.app/
 
 Features:
 1. Anyone if logged in can see some more features.
