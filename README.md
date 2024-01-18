@@ -1,8 +1,9 @@
-# React + Vite
+Website Name: swiftscan Diagnostics
+Live link: https://swiftscan-diagnostics.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features:
+1.This is medical diagnostic website. 
+2.Anyone if logged in can see some more features. 
+3.If one logged in he/she will be user and see user dashboard where he/she can book a test, update and delete the test from dashboard. 
+4.If one logged in as admin, he/she can make anyone admin from user list, delete user, delete a test or update a test, add a test and also can see the tests he/she added. 
+5.Admin and user will get different dashboard and menu items.
