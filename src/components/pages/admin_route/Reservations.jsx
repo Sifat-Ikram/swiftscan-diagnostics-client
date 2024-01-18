@@ -1,4 +1,3 @@
-import React from 'react';
 import { MdDelete } from 'react-icons/md';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
@@ -10,7 +9,7 @@ const Reservations = () => {
     const { data: bookings = [], refetch } = useQuery({
         queryKey: ['booking'],
         queryFn: async () => {
-            const res = await axiosSecure.get('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/cart/admin');
+            const res = await axiosSecure.get('http://localhost:4321/cart/admin');
             return res.data;
         }
     })
@@ -27,7 +26,7 @@ const Reservations = () => {
             confirmButtonText: "delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axiosSecure.delete(`https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/cart/admin/${item.menuId}`)
+                axiosSecure.delete(`http://localhost:4321/cart/admin/${item._id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             Swal.fire({
@@ -45,12 +44,12 @@ const Reservations = () => {
     
 
     return (
-        <div className='w-11/12 mx-auto py-10'>
+        <div className='w-11/12 py-10 mx-auto'>
             <div className='w-full bg-[#0845F4] py-5'>
-                <h1 className='text-white uppercase text-4xl text-extrabold text-center'>all bookings</h1>
+                <h1 className='text-4xl text-center text-white uppercase text-extrabold'>all bookings</h1>
             </div>
             <div className='p-2 mt-10'>
-                <div className="overflow-x-auto mt-3">
+                <div className="mt-3 overflow-x-auto">
                     <table className="table">
                         {/* head */}
                         <thead className='bg-[#0845F4] rounded-lg'>
@@ -66,7 +65,7 @@ const Reservations = () => {
                                 bookings.map((item) => <tr key={item._id}>
                                     <th>
                                         <div>
-                                            <img src={item.image} className='w-36 h-24' alt="" />
+                                            <img src={item.image} className='h-24 w-36' alt="" />
                                         </div>
                                     </th>
                                     <td>
@@ -80,7 +79,7 @@ const Reservations = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <MdDelete onClick={() => handleDelete(item)} className='text-4xl cursor-pointer bg-red-700 text-white p-2 rounded-md'></MdDelete>
+                                        <MdDelete onClick={() => handleDelete(item)} className='p-2 text-4xl text-white bg-red-700 rounded-md cursor-pointer'></MdDelete>
                                     </td>
                                 </tr>)
                             }

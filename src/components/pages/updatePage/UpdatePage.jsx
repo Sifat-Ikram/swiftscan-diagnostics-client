@@ -65,7 +65,7 @@ const UpdatePage = () => {
                 district: data.district
             }
 
-            const testRes = await axios.patch(`https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/user/${_id}`, testInfo);
+            const testRes = await axios.patch(`http://localhost:4321/user/${_id}`, testInfo);
             
             if (testRes.data.modifiedCount) {
                 Swal.fire("Test updated successfully");

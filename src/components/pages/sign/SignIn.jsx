@@ -22,7 +22,7 @@ const SignIn = () => {
                     email: res.user?.email,
                     name: res.user?.displayName
                 }
-                axios.post('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/user', userInfo)
+                axios.post('http://localhost:4321/user', userInfo)
                     .then(res => {
                         
                         navigate(location?.state ? location.state : '/')

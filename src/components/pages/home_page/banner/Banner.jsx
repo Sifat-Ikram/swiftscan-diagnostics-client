@@ -1,4 +1,3 @@
-import React from 'react';
 import banner from '../../../../assets/banner.jpg'
 
 const Banner = () => {
@@ -6,7 +5,7 @@ const Banner = () => {
     return (
         <div>
             <div className="hero">
-                <div className="hero-content flex-col-reverse lg:flex-row-reverse">
+                <div className="flex-col-reverse hero-content lg:flex-row-reverse">
                     <div className='flex-1'>
                         <img src={banner} className="rounded-lg" />
                     </div>

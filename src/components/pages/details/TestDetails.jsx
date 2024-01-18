@@ -1,29 +1,40 @@
-import React from 'react';
-import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import useCart from '../../hooks/useCart';
 import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
 
 const TestDetails = () => {
     const { id } = useParams();
-    const tests = useLoaderData();
     const { user } = useAuth();
     const navigate = useNavigate();
     const axiosPublic = useAxiosPublic();
     const [, refetch] = useCart();
 
+    const { data: tests = [] } = useQuery({
+        queryKey: ['tests'],
+        queryFn: async () => {
+            const res = await axios.get('http://localhost:4321/service');
+            return res.data;
+        },
+        onError: (error) => {
+            console.error("Error fetching data:", error);
+        }
+    })
 
-    const filteredTest = tests.filter(test => test._id == id);
+
+    const filteredTest = tests.filter(test => test._id === id);
 
 
     if (!filteredTest) {
         return <span className="loading loading-dots loading-lg"></span> ;
     }
 
-    const { title, image, date, details, slots, _id, price } = filteredTest;
+
+    const { title, image, date, details, slots, _id, price } = filteredTest[0];
 
     const handleApply = () => {
         if (user && user.email) {
@@ -39,7 +50,7 @@ const TestDetails = () => {
             }
             axiosPublic.post('/cart', cartItem)
                 .then(res => {
-                    console.log(res.data);
+                    
                     if (res.data.insertedId) {
                         Swal.fire({
                             position: "top-end",
@@ -70,15 +81,15 @@ const TestDetails = () => {
     }
 
     return (
-        <div className='space-y-10 mb-10'>
-            <div className="w-10/12 mx-auto mt-10 text-left space-y-8">
-                <img src={image} className="h-96 w-full" alt="" />
-                <h1 className="font-semibold text-4xl">{title}</h1>
+        <div className='mb-10 space-y-10'>
+            <div className="w-10/12 mx-auto mt-10 space-y-8 text-left">
+                <img src={image} className="w-full h-96" alt="" />
+                <h1 className="text-4xl font-semibold">{title}</h1>
                 <h1 className="text-lg font-medium">Date: {date}</h1>
                 <h1 className="text-lg font-medium">Price: ${price}</h1>
                 <div>
                     {
-                        slots?.map(item => <div key={item.id} className='flex justify-center gap-10 items-center'>
+                        slots?.map(item => <div key={item.id} className='flex items-center justify-center gap-10'>
                             <h1>{item.time}</h1>
                             <h1>{item.availability}</h1>
                         </div>)

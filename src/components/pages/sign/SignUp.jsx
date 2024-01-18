@@ -1,5 +1,4 @@
-import React, { useContext, useState } from 'react';
-import { ToastContainer, toast } from 'react-toast'
+import { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { updateProfile } from 'firebase/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -13,7 +12,7 @@ import { useEffect } from 'react';
 const SignUp = () => {
     const [district, setDistrict] = useState(null);
     const { createUser, googleRegister } = useContext(AuthContext);
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit } = useForm();
     const location = useLocation();
     const navigate = useNavigate();
     const [error, setError] = useState('');
@@ -34,14 +33,14 @@ const SignUp = () => {
     const handleGoogleRegister = () => {
         googleRegister()
             .then(res => {
-                
+
                 const userInfo = {
                     email: res.user?.email,
                     name: res.user?.displayName
                 }
-                axios.post('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/user', userInfo)
+                axios.post('http://localhost:4321/user', userInfo)
                     .then(res => {
-                        
+                        console.log(res.user);
                         navigate(location?.state ? location.state : '/')
                     })
             })
@@ -49,7 +48,7 @@ const SignUp = () => {
     }
 
     const onSubmit = (data) => {
-        
+
 
         const regex = /^(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
         if (data.password.length < 6) {
@@ -63,8 +62,6 @@ const SignUp = () => {
 
         createUser(data.email, data.password)
             .then(res => {
-                
-
 
                 setSuccess('');
                 updateProfile(res.user, {
@@ -86,9 +83,8 @@ const SignUp = () => {
                     bloodGroup: data.bloodGroup,
                     district: data.district
                 }
-                axios.post('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/user', userInfo)
+                axios.post('http://localhost:4321/user', userInfo)
                     .then(res => {
-
                         if (res.data.insertedId) {
                             Swal.fire("You signed up successfully!");
                             navigate(location?.state ? location.state : '/');
@@ -109,7 +105,7 @@ const SignUp = () => {
         <div>
             <div className="my-10">
                 <div className="w-5/6 mx-auto">
-                    <div className="w-2/3 mx-auto gap-8">
+                    <div className="w-2/3 gap-8 mx-auto">
                         <div className="flex-1 text-center py-10 bg-[#0845F4] w-full">
                             <h1 className="text-5xl font-bold text-white">Sign up now!</h1>
                         </div>
@@ -118,26 +114,26 @@ const SignUp = () => {
                                 <label className="label">
                                     <span className="label-text">Full Name</span>
                                 </label>
-                                <input name='name' {...register("name")} type="text" placeholder="Type your name here" className="input input-bordered w-full" />
+                                <input name='name' {...register("name")} type="text" placeholder="Type your name here" className="w-full input input-bordered" />
                             </div>
                             <div>
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input name='email' type="email" {...register("email")} placeholder="email" className="input input-bordered w-full" required />
+                                <input name='email' type="email" {...register("email")} placeholder="email" className="w-full input input-bordered" required />
                             </div>
-                            <div className='lg:flex justify-between gap-3'>
+                            <div className='justify-between gap-3 lg:flex'>
                                 <div className='flex-1'>
                                     <label className="label">
                                         <span className="label-text">Avatar</span>
                                     </label>
-                                    <input name='photo' {...register("photo")} type="text" placeholder="Your photo url" className="input input-bordered w-full" />
+                                    <input name='photo' {...register("photo")} type="text" placeholder="Your photo url" className="w-full input input-bordered" />
                                 </div>
                                 <div className='flex-1'>
                                     <label className="label">
                                         <span className="label-text">Your Blood Group</span>
                                     </label>
-                                    <select  {...register("bloodGroup")} className="select select-bordered w-full">
+                                    <select  {...register("bloodGroup")} className="w-full select select-bordered">
                                         <option disabled>Select your blood group</option>
                                         <option value="A+">A+</option>
                                         <option value="A-">A-</option>
@@ -150,12 +146,12 @@ const SignUp = () => {
                                     </select>
                                 </div>
                             </div>
-                            <div className='lg:flex justify-between gap-3'>
+                            <div className='justify-between gap-3 lg:flex'>
                                 <div className='flex-1'>
                                     <label className="label">
                                         <span className="label-text">Your District</span>
                                     </label>
-                                    <select {...register("district")} className="select select-bordered w-full">
+                                    <select {...register("district")} className="w-full select select-bordered">
                                         {
                                             district.map(dist => <option key={dist.id} value={dist.name}>{dist.name}</option>)
                                         }

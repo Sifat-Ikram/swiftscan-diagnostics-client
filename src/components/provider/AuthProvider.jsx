@@ -43,7 +43,7 @@ const AuthProvider = ({ children }) => {
            setUser(observer);
            if (observer) {
             const userInfo = { email: observer.email };
-            axios.post('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/jwt', userInfo, {withCredentials: true})
+            axios.post('http://localhost:4321/jwt', userInfo, {withCredentials: true})
             .then(res =>{
                 if (res.data.token) {
                     localStorage.setItem('access-token', res.data.token);

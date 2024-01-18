@@ -1,6 +1,4 @@
-import React from 'react';
-import { MdDelete, MdEditNote } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { MdDelete } from 'react-icons/md';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import useCart from '../../../hooks/useCart';
@@ -9,7 +7,7 @@ const Booking = () => {
     const [cart, refetch] = useCart();
     const totalPrice = cart.reduce((total, item) => total + item.price, 0);
 
-    const handleDelete = id => {
+    const handleDelete = item => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -20,9 +18,11 @@ const Booking = () => {
             confirmButtonText: "Yes"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/cart/${id}`)
+                console.log("nothing");
+                axios.delete(`http://localhost:4321/cart/${item._id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
+                            console.log(res.data);
                             refetch();
                             Swal.fire({
                                 title: "Deleted!",
@@ -31,6 +31,10 @@ const Booking = () => {
                             });
                         }
                     })
+                    .catch(error => {
+                        console.error("Error deleting item:", error);
+                        // Add additional error handling as needed
+                    });
 
             }
         });
@@ -39,10 +43,10 @@ const Booking = () => {
     return (
         <div className='w-11/12 mx-auto'>
             <div className='w-full bg-[#0845F4] py-5'>
-                <h1 className='text-white uppercase text-4xl text-extrabold text-center'>all bookings</h1>
+                <h1 className='text-4xl text-center text-white uppercase text-extrabold'>all bookings</h1>
             </div>
             <div className='p-2 mt-10'>
-                <div className="overflow-x-auto mt-3">
+                <div className="mt-3 overflow-x-auto">
                     <table className="table">
                         {/* head */}
                         <thead className='bg-[#0845F4] rounded-lg'>
@@ -64,7 +68,7 @@ const Booking = () => {
                                     <td>
                                         <div className="flex items-center gap-3">
                                             <div className="avatar">
-                                                <div className="mask mask-squircle w-12 h-12">
+                                                <div className="w-12 h-12 mask mask-squircle">
                                                     <img src={item.image} alt="Avatar Tailwind CSS Component" />
                                                 </div>
                                             </div>
@@ -86,7 +90,7 @@ const Booking = () => {
                                         </div>
                                     </td>
                                     <td>
-                                        <MdDelete onClick={() => handleDelete(item._id)} className='text-4xl cursor-pointer bg-red-700 text-white p-2 rounded-md'></MdDelete>
+                                        <MdDelete onClick={() => handleDelete(item)} className='p-2 text-4xl text-white bg-red-700 rounded-md cursor-pointer'></MdDelete>
                                     </td>
                                 </tr>)
                             }

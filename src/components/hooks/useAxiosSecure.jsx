@@ -5,7 +5,7 @@ import { AuthContext } from '../provider/AuthProvider';
 
 
 const axiosSecure = axios.create({
-    baseURL: 'https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app'
+    baseURL: 'http://localhost:4321'
 })
 const useAxiosSecure = () => {
     const { logOut } = useContext(AuthContext);

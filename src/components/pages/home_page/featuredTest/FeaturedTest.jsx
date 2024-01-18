@@ -8,7 +8,7 @@ const FeaturedTest = () => {
     const { data: tests = [] } = useQuery({
         queryKey: ['tests'],
         queryFn: async () => {
-            const res = await axios.get('https://swiftscan-diagnostics-server-7xwefv715-md-sifat-ikrams-projects.vercel.app/service');
+            const res = await axios.get('http://localhost:4321/service');
             return res.data;
         },
         onError: (error) => {
