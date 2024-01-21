@@ -7,8 +7,8 @@
   </li>
 </ul>
 
-<h3>Admin email: swiftscan@diagnostics.com</h3>
-<h3>Admin password: swiftscan123</h3>
+<p>Admin email: swiftscan@diagnostics.com</p>
+<p>Admin password: swiftscan123</p>
 
 
 Features:
