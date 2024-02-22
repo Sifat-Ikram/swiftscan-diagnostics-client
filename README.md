@@ -3,7 +3,7 @@
     Website Name: swiftscan Diagnostics
   </li>
   <li>
-    Live link: https://swiftscan-diagnostics.web.app/
+    Live link: https://swiftscan-diagnostics.web.app
   </li>
 </ul>
 
